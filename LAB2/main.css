@@ -1,0 +1,29 @@
+h1 {
+  font-family: sans-serif;
+  size: 3em;
+  font-weight: bold;
+}
+
+hr {
+  border: black solid 1px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: row;
+  /* margin: 20px 0 20px 0; */
+}
+
+button {
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  margin: 10px;
+  padding: 2px;
+}

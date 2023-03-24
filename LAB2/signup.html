@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>SignUp - IP shop</title>
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>welcome to IP shop</h1>
+      <div>
+        <a href="./login.html">로그인</a>
+        <a href="./signup.html">회원가입</a>
+      </div>
+    </header>
+    <hr />
+    <article>
+      <h3>개인 정보 (필수)</h3>
+      <div>
+        <form>
+          <div>
+            <label>이름 : </label
+            ><input id="name" type="text" placeholder="이름을 입력하세요." />
+          </div>
+          <div>
+            <label>생일 : </label
+            ><input name="birthday" type="date" placeholder="연도 - 월 - 일" />
+          </div>
+          <div>
+            <label>학년 : </label
+            ><input
+              name="grade"
+              id="grade"
+              type="number"
+              placeholder="이름을 입력하세요."
+            />
+          </div>
+          <div>
+            <label>전화번호 : </label
+            ><input name="phone" type="tel" placeholder="(###)###-####" />
+          </div>
+          <div>
+            <label>유저 아이디 : </label
+            ><input
+              name="userId"
+              id="userId"
+              type="text"
+              placeholder="아이디를 입력하세요."
+            />
+          </div>
+          <div>
+            <label>비밀번호 : </label
+            ><input
+              name="password"
+              id="password"
+              type="password"
+              placeholder="비밀번호 입력하세요"
+            />
+          </div>
+          <div>
+            <label>비밀번호 확인 : </label
+            ><input
+              name="passwordCheck"
+              id="passwordCheck"
+              type="password"
+              placeholder="비밀번호 확인"
+            />
+          </div>
+          <div class="button-div">
+            <button type="submit">회원가입</button>
+            <button type="reset">취소</button>
+          </div>
+        </form>
+      </div>
+    </article>
+    <hr />
+  </body>
+</html>
