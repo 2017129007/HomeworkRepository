@@ -57,6 +57,18 @@ body {
   }
 }
 
+/* nav바 */
+.navigation {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  /* width: 100%; */
+}
+
+.navigation a {
+  margin: 0px 10px;
+}
+
 /* 로그인, 회원가입 */
 h1 {
   font-size: xx-large;
@@ -128,7 +140,17 @@ button a {
 /* index */
 
 .book-image {
-  width: 50px;
+  width: 65px;
+  display: block;
+  border: 1px solid black;
+  position: relative;
+  z-index: 3;
+}
+
+.book-image:hover {
+  width: 100px;
+  z-index: 0;
+  transition: 2s width linear;
 }
 
 .book-category {
@@ -141,13 +163,17 @@ button a {
   margin: 10px 5px;
 }
 
-.books img {
+.book-name-wrapper {
+  background-color: black;
+  color: yellow;
   display: block;
-  border: 1px solid black;
-}
-
-.book-name {
-  display: block;
+  z-index: 0;
+  position: relative;
+  bottom: 70px;
+  font-weight: bolder;
+  font-size: large;
+  width: 65px;
+  pointer-events: none;
 }
 
 .main-books {
