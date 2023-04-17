@@ -92,3 +92,7 @@ button a {
   border-bottom: 3px red solid;
   padding: 3px 0 3px 0;
 }
+
+.book-image {
+  width: 50px;
+}
