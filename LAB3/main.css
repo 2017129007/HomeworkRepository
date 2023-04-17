@@ -1,3 +1,4 @@
+/* body */
 body {
   display: flex;
   flex-direction: column;
@@ -10,9 +11,14 @@ body {
   width: 1020px;
 }
 
+/* 반응형 */
 @media (min-width: 801px) {
   .body-wrapper {
-    width: 800px;
+    width: 900px;
+  }
+  .main-footer-paragraph {
+    column-count: 2;
+    column-rule: 1px solid black;
   }
 }
 
@@ -28,6 +34,30 @@ body {
   }
 }
 
+/* 헤더 애니메이션 */
+.header {
+  display: flex;
+  justify-content: left;
+}
+
+.animation-slide-in {
+  animation: slide-in 2s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+}
+
+@keyframes slide-in {
+  0% {
+    left: 100%;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+/* 로그인, 회원가입 */
 h1 {
   font-size: xx-large;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -52,6 +82,8 @@ a {
 form div {
   margin: 5px 0px 5px 0px;
 }
+
+/* 버튼 */
 
 .button-div {
   display: flex;
@@ -93,6 +125,48 @@ button a {
   padding: 3px 0 3px 0;
 }
 
+/* index */
+
 .book-image {
   width: 50px;
+}
+
+.book-category {
+  margin: 10px 5px;
+  padding: 20px 10px;
+  border: 1px solid black;
+}
+
+.books {
+  margin: 10px 5px;
+}
+
+.books img {
+  display: block;
+  border: 1px solid black;
+}
+
+.book-name {
+  display: block;
+}
+
+.main-books {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* flex box */
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
 }

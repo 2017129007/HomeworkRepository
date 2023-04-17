@@ -9,8 +9,10 @@
   </head>
   <body>
     <div class="body-wrapper">
-      <header>
-        <h1>안녕하세요 마켓컬리입니다</h1>
+      <header class="header">
+        <h1 class="header-title animation-slide-in">
+          안녕하세요 마켓컬리입니다
+        </h1>
       </header>
       <nav class="navigation">
         <a class="selected" href="index.html">메인페이지</a>
@@ -19,52 +21,108 @@
       </nav>
 
       <hr />
-      <main class="main">
+      <main class="main d-flex-column">
         <div class="main-header">
           <h3>HTML5</h3>
         </div>
-        <div class="main-contents">
-          <div class="book-category">
-            <div class="books">
-              <img class="book-image" src="./img/effectiveTypescript.jpg" />
-              어떤책1
-            </div>
-            <div class="books">
-              <img class="book-image" src="./img/effectiveTypescript.jpg" />
-              어떤책2
-            </div>
-            <div class="books">
-              <img class="book-image" src="./img/effectiveTypescript.jpg" />
-              어떤책3
-            </div>
-            <div class="books">
-              <img class="book-image" src="./img/effectiveTypescript.jpg" />
-              어떤책4
-            </div>
+        <div class="main-contents d-flex-column">
+          <div class="main-books d-flex-row">
+            <section class="book-category d-flex-column">
+              <div class="books-row d-flex-row">
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  <span class="book-name">어떤책1</span>
+                </div>
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  어떤책2
+                </div>
+              </div>
+              <div class="books-row d-flex-row">
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  어떤책3
+                </div>
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  어떤책4
+                </div>
+              </div>
+            </section>
+
+            <section class="book-category">
+              <div class="books-row d-flex-row">
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  <span class="book-name">어떤책1</span>
+                </div>
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  어떤책2
+                </div>
+              </div>
+              <div class="books-row d-flex-row">
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  어떤책3
+                </div>
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  어떤책4
+                </div>
+              </div>
+            </section>
+            <section class="book-category">
+              <div class="books-row d-flex-row">
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  <span class="book-name">어떤책1</span>
+                </div>
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  <span class="book-name">어떤책2</span>
+                </div>
+              </div>
+              <div class="books-row d-flex-row">
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  <span class="book-name">어떤책3</span>
+                </div>
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  <span class="book-name">어떤책4</span>
+                </div>
+              </div>
+            </section>
+            <section class="book-category">
+              <div class="books-row d-flex-row">
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  <span class="book-name">어떤책1</span>
+                </div>
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  어떤책2
+                </div>
+              </div>
+              <div class="books-row d-flex-row">
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  어떤책3
+                </div>
+                <div class="books">
+                  <img class="book-image" src="./img/effectiveTypescript.jpg" />
+                  어떤책4
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="book-category">
-            <div class="books">
-              <img class="book-image" src="./img/effectiveTypescript.jpg" />
-              어떤책1
-            </div>
-            <div class="books">
-              <img class="book-image" src="./img/effectiveTypescript.jpg" />
-              어떤책2
-            </div>
-            <div class="books">
-              <img class="book-image" src="./img/effectiveTypescript.jpg" />
-              어떤책3
-            </div>
-            <div class="books">
-              <img class="book-image" src="./img/effectiveTypescript.jpg" />
-              어떤책4
-            </div>
-          </div>
+          <!-- books-category 끝-->
         </div>
         <div class="main-footer">
           <h3 class="main-footer-title">마켓컬리 소개</h3>
           <div class="main-footer-content">
-            <p class="">
+            <p class="main-footer-paragraph">
               여기는마켓컬리 여기는마켓컬리 여기는마켓컬리 여기는마켓컬리
               여기는마켓컬리 여기는마켓컬리 여기는마켓컬리 여기는마켓컬리
               여기는마켓컬리 여기는마켓컬리 여기는마켓컬리 여기는마켓컬리
