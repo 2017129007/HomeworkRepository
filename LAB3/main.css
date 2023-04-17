@@ -1,3 +1,33 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.body-wrapper {
+  width: 1020px;
+}
+
+@media (min-width: 801px) {
+  .body-wrapper {
+    width: 800px;
+  }
+}
+
+@media (max-width: 800px) {
+  .body-wrapper {
+    width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .body-wrapper {
+    width: 300px;
+  }
+}
+
 h1 {
   font-size: xx-large;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
