@@ -1,0 +1,26 @@
+[
+  {
+    "title": "어떤책1",
+    "author": "김저자",
+    "img": "./img/effectiveTypesript.jpg",
+    "description": "이런 저런 책입니다."
+  },
+  {
+    "title": "어떤책2",
+    "author": "김저자",
+    "img": "./img/effectiveTypesript.jpg",
+    "description": "이런 저런 책입니다."
+  },
+  {
+    "title": "어떤책3",
+    "author": "김저자",
+    "img": "./img/effectiveTypesript.jpg",
+    "description": "이런 저런 책입니다."
+  },
+  {
+    "title": "어떤책4",
+    "author": "김저자",
+    "img": "./img/effectiveTypesript.jpg",
+    "description": "이런 저런 책입니다."
+  }
+]
