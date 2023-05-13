@@ -1,9 +1,9 @@
 function createBooksDiv() {
-  const booksRow = document.createElement(div);
-  const books = document.createElement(div);
-  const bookImg = document.createElement(img);
-  const bookNameWrapper = document.createElement(div);
-  const bookName = document.createElement(img);
+  const booksRow = document.createElement("div");
+  const books = document.createElement("div");
+  const bookImg = document.createElement("img");
+  const bookNameWrapper = document.createElement("div");
+  const bookName = document.createElement("span");
 
   booksRow.classList.add("books-row", "d-flex-row");
   books.classList.add("books");
