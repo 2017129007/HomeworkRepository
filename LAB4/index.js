@@ -17,7 +17,7 @@ function createBooksDiv() {
   booksRow.appendChild(books);
   booksRow.appendChild(books);
 
-  document.querySelector("main").firstChild.appendChild(booksRow);
+  document.querySelector("main-footer").firstChild.appendChild(booksRow);
 }
 
 // function putBooksInRender(data) {
