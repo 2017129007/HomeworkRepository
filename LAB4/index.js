@@ -1,14 +1,42 @@
-fetch("./products.json")
-  .then((res) => res.json())
-  .then((data) => console.log(data));
-
-function createBooksDiv(booksResponse) {
+function createBooksDiv() {
   const booksRow = document.createElement(div);
   const books = document.createElement(div);
   const bookImg = document.createElement(img);
   const bookNameWrapper = document.createElement(div);
   const bookName = document.createElement(img);
+
+  booksRow.classList.add("books-row", "d-flex-row");
+  books.classList.add("books");
+  bookImg.classList.add("book-image");
+  bookNameWrapper.classList.add("book-name-wraper");
+  bookName.classList.add("book-name");
+
+  books.appendChild(bookImg);
+  books.appendChild(bookNameWrapper);
+  bookNameWrapper.appendChild(bookName);
+  booksRow.appendChild(books);
+  booksRow.appendChild(books);
+
+  document.querySelector("main").firstChild.appendChild(booksRow);
 }
+
+// function putBooksInRender(data) {
+//   booksRow;
+// }
+
+let booksData = [];
+
+fetch("./products.json")
+  .then((res) => res.json())
+  .then((data) => booksData.join(data));
+
+console.log(booksData);
+
+createBooksDiv();
+
+booksData.forEach((book) => {
+  bookName.innerHTML = book.title;
+});
 
 // <div class="books-row d-flex-row">
 {
