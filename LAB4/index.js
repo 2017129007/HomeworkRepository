@@ -1,38 +1,48 @@
-function createBooksDiv() {
-  const booksRow = document.createElement("div");
-  const books = document.createElement("div");
-  const bookImg = document.createElement("img");
-  const bookNameWrapper = document.createElement("div");
-  const bookName = document.createElement("span");
+// function createBooksDiv() {
+//   const booksRow = document.createElement("div");
+//   const books = document.createElement("div");
+//   const bookImg = document.createElement("img");
+//   const bookNameWrapper = document.createElement("div");
+//   const bookName = document.createElement("span");
 
-  booksRow.classList.add("books-row", "d-flex-row");
-  books.classList.add("books");
-  bookImg.classList.add("book-image");
-  bookNameWrapper.classList.add("book-name-wraper");
-  bookName.classList.add("book-name");
+//   booksRow.classList.add("books-row", "d-flex-row");
+//   books.classList.add("books");
+//   bookImg.classList.add("book-image");
+//   bookNameWrapper.classList.add("book-name-wraper");
+//   bookName.classList.add("book-name");
 
-  books.appendChild(bookImg);
-  books.appendChild(bookNameWrapper);
-  bookNameWrapper.appendChild(bookName);
-  booksRow.appendChild(books);
-  booksRow.appendChild(books);
+//   books.appendChild(bookImg);
+//   books.appendChild(bookNameWrapper);
+//   bookNameWrapper.appendChild(bookName);
+//   booksRow.appendChild(books);
+//   booksRow.appendChild(books);
 
-  document.body.appendChild(booksRow);
-}
-
-// function putBooksInRender(data) {
-//   booksRow;
+//   document.body.appendChild(booksRow);
 // }
+
+function putEachData(data) {
+  const sectionElement = document.querySelector("#book-section");
+  console.log("pED : ", data);
+  data.forEach((book) => {
+    console.log("forEach : ", book);
+    const bookElement = document.createElement("div");
+    bookElement.innerHTML = book?.title + book?.author + book?.description;
+    bookElement.appendChild("img");
+    bookElement.lastChild.src = book?.img;
+    sectionElement.appendChild();
+  });
+}
 
 let booksData = [];
 
 fetch("./products.json")
   .then((res) => res.json())
+  .then((data) => putEachData(data))
   .then((data) => booksData.join(data));
 
 console.log(booksData);
 
-createBooksDiv();
+// createBooksDiv();
 
 booksData.forEach((book) => {
   bookName.innerHTML = book.title;
