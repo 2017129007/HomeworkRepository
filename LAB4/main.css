@@ -161,14 +161,20 @@ button a {
 
 .books {
   margin: 10px 5px;
-}
-
-.main-books {
-  width: 100%;
-  flex-wrap: wrap;
+  width: 50%;
 }
 
 /* flex box */
+.d-flex-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.d-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .d-flex-column {
   display: flex;
   flex-direction: column;
