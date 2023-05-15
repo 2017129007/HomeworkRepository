@@ -12,7 +12,7 @@
     "author": "이저자",
     "img": "./img/css3.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$12",
+    "price": "$11",
     "category": "CSS"
   },
   {
@@ -20,7 +20,7 @@
     "author": "박저자",
     "img": "./img/html1.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$12",
+    "price": "$10",
     "category": "HTML"
   },
   {
@@ -36,7 +36,7 @@
     "author": "김저자",
     "img": "./img/js1.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$12",
+    "price": "$13",
     "category": "JS"
   },
   {
@@ -44,7 +44,7 @@
     "author": "김저자",
     "img": "./img/html1.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$12",
+    "price": "$2",
     "category": "HTML"
   },
   {
@@ -52,7 +52,7 @@
     "author": "김저자",
     "img": "./img/css2.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$12",
+    "price": "$1",
     "category": "CSS"
   },
   {
@@ -60,7 +60,7 @@
     "author": "김저자",
     "img": "./img/html2.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$12",
+    "price": "$14",
     "category": "HTML"
   },
   {
@@ -116,7 +116,7 @@
     "author": "김저자",
     "img": "./img/effectiveTypescript.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$8",
+    "price": "$89",
     "category": "JS"
   },
   {
@@ -132,7 +132,7 @@
     "author": "김저자",
     "img": "./img/css2.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$8",
+    "price": "$80",
     "category": "CSS"
   },
   {
@@ -164,7 +164,7 @@
     "author": "김저자",
     "img": "./img/effectiveTypescript.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$19",
+    "price": "$9",
     "category": "JS"
   },
   {
@@ -172,7 +172,7 @@
     "author": "김저자",
     "img": "./img/js1.jpg",
     "description": "이런 저런 책입니다.",
-    "price": "$19",
+    "price": "$12",
     "category": "JS"
   }
 ]

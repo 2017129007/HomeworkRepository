@@ -8,6 +8,9 @@ const loadItems = async () => {
 
   isFetching = true;
   console.log("fetching? ", isFetching);
+  // document.querySelector("section").innerHTML = "";
+
+  console.log("dataList Before Fetch ", dataList);
   await fetch(
     "https://2017129007.github.io/HomeworkRepository/LAB4/products.json"
   )
@@ -15,9 +18,10 @@ const loadItems = async () => {
     .then((data) =>
       data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
     )
-    .then((data) => executeFilter(data))
+    // .then((data) => executeFilter(data))
     .then((data) => {
-      dataList = data;
+      // dataList = [...dataList, ...data];
+      dataList = [...data];
       console.log("dl", dataList);
     })
     .catch((error) => console.log(error));
@@ -25,7 +29,7 @@ const loadItems = async () => {
   putEachData(dataList);
 
   isFetching = false;
-  currentPage++;
+  // currentPage++;
 };
 
 const addBooksOnClick = (book) => {
@@ -46,7 +50,9 @@ const makeDetailElement = (book) => {
   category.innerHTML = `Category : ${book?.category}`;
   const description = document.createElement("div");
   description.innerHTML = `Description : ${book?.description}`;
-  bookDetail.append(title, author, category, description);
+  const price = document.createElement("div");
+  price.innerHTML = `Price : ${book?.price}`;
+  bookDetail.append(title, author, category, description, price);
   return bookDetail;
 };
 
@@ -78,9 +84,10 @@ loadItems();
 
 // Scroll event listener
 window.addEventListener("scroll", () => {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  if (window.innerHeight + window.scrollY > document.body.offsetHeight) {
     loadItems();
-    // putEachData(dataList);
+    console.log("currentPage : ", currentPage);
+    currentPage++;
   }
 });
 
@@ -103,28 +110,39 @@ const onFilterClick = (e) => {
 };
 
 const executeFilter = (data) => {
-  console.log("data", data);
   let filteredData = data;
   if (filterValues.category !== "All") {
     filteredData = data.filter((book) => {
-      book.category === filterValues.category;
+      if (book.category === filterValues.category) {
+        return true;
+      } else return false;
     });
   }
-  console.log("fvC", filterValues.category);
   console.log("filteredData", filteredData);
   const sortedData =
     filterValues?.sort === "up"
       ? filteredData.sort((a, b) => {
-          a?.price > b?.price;
+          a?.price.slice(1) > b?.price.slice(1);
         })
       : filteredData.sort((a, b) => {
-          a?.price < b?.price;
+          a?.price.slice(1) < b?.price.slice(1);
         });
+  console.log("sorted", sortedData);
   return sortedData;
 };
 
 const filterButton = document.getElementById("filter-button");
-filterButton.onclick = loadItems;
+filterButton.onclick = () => {
+  // loadItems();
+  console.log("fbDL", dataList);
+  const section = document.querySelector("#book-section");
+  while (section.firstChild) {
+    console.log("FC", section.firstChild);
+    section?.firstChild?.remove();
+  }
+  const filteredList = executeFilter(dataList);
+  putEachData(filteredList);
+};
 
 const selectElements = document.querySelectorAll(".sort");
 selectElements.forEach((element) => (element.onchange = handleFilterChange));
