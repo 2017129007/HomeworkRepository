@@ -15,13 +15,11 @@ const loadItems = async () => {
     "https://2017129007.github.io/HomeworkRepository/LAB4/products.json"
   )
     .then((res) => res.json())
-    .then((data) =>
-      data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
-    )
+    .then((data) => data.slice(0, currentPage * itemsPerPage))
     // .then((data) => executeFilter(data))
     .then((data) => {
       // dataList = [...dataList, ...data];
-      dataList = [...data];
+      dataList = data;
       console.log("dl", dataList);
     })
     .catch((error) => console.log(error));
@@ -84,11 +82,17 @@ loadItems();
 
 // Scroll event listener
 window.addEventListener("scroll", () => {
-  if (window.innerHeight + window.scrollY > document.body.offsetHeight) {
+  // setTimeout(() => {
+  if (
+    window.innerHeight + window.scrollY > document.body.offsetHeight &&
+    dataList.length < 22
+  ) {
+    clearSection();
     loadItems();
     console.log("currentPage : ", currentPage);
     currentPage++;
   }
+  // }, 800);
 });
 
 // filter
@@ -119,14 +123,16 @@ const executeFilter = (data) => {
     });
   }
   console.log("filteredData", filteredData);
-  const sortedData =
-    filterValues?.sort === "up"
-      ? filteredData.sort((a, b) => {
-          a?.price.slice(1) > b?.price.slice(1);
-        })
-      : filteredData.sort((a, b) => {
-          a?.price.slice(1) < b?.price.slice(1);
-        });
+  let sortedData = filteredData;
+  if (filterValues?.sort === "up") {
+    sortedData = filteredData.sort(
+      (a, b) => parseInt(a?.price.slice(1)) - parseInt(b?.price.slice(1))
+    );
+  } else if (filterValues?.sort === "down") {
+    sortedData = filteredData.sort(
+      (a, b) => parseInt(b?.price.slice(1)) - parseInt(a?.price.slice(1))
+    );
+  }
   console.log("sorted", sortedData);
   return sortedData;
 };
@@ -134,12 +140,8 @@ const executeFilter = (data) => {
 const filterButton = document.getElementById("filter-button");
 filterButton.onclick = () => {
   // loadItems();
-  console.log("fbDL", dataList);
-  const section = document.querySelector("#book-section");
-  while (section.firstChild) {
-    console.log("FC", section.firstChild);
-    section?.firstChild?.remove();
-  }
+  // console.log("fbDL", dataList);
+  clearSection();
   const filteredList = executeFilter(dataList);
   putEachData(filteredList);
 };
@@ -147,3 +149,11 @@ filterButton.onclick = () => {
 const selectElements = document.querySelectorAll(".sort");
 selectElements.forEach((element) => (element.onchange = handleFilterChange));
 console.log(selectElements);
+
+function clearSection() {
+  const section = document.querySelector("#book-section");
+  while (section.firstChild) {
+    console.log("FC", section.firstChild);
+    section?.firstChild?.remove();
+  }
+}
