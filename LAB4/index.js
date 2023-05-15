@@ -1,46 +1,23 @@
-// function createBooksDiv() {
-//   const booksRow = document.createElement("div");
-//   const books = document.createElement("div");
-//   const bookImg = document.createElement("img");
-//   const bookNameWrapper = document.createElement("div");
-//   const bookName = document.createElement("span");
+let currentPage = 1;
+const itemsPerPage = 6;
+let isFetching = false;
 
-//   booksRow.classList.add("books-row", "d-flex-row");
-//   books.classList.add("books");
-//   bookImg.classList.add("book-image");
-//   bookNameWrapper.classList.add("book-name-wraper");
-//   bookName.classList.add("book-name");
+const loadItems = () => {
+  if (isFetching) return;
 
-//   books.appendChild(bookImg);
-//   books.appendChild(bookNameWrapper);
-//   bookNameWrapper.appendChild(bookName);
-//   booksRow.appendChild(books);
-//   booksRow.appendChild(books);
+  isFetching = true;
+  console.log("fetching? ", isFetching);
+  fetch("https://2017129007.github.io/HomeworkRepository/LAB4/products.json")
+    .then((res) => res.json())
+    .then((data) =>
+      data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+    )
+    .then((data) => putEachData(data))
+    .catch((error) => console.log(error));
 
-//   document.body.appendChild(booksRow);
-// }
-
-function putEachData(data) {
-  const sectionElement = document.querySelector("#book-section");
-  console.log("pED : ", data);
-  data.forEach((book) => {
-    const bookElement = document.createElement("div");
-    bookElement.classList.add("books");
-    const bookDetail = makeDetailElement(book);
-    const bookImg = makeBookImage(book);
-    bookElement.appendChild(bookDetail);
-    bookElement.appendChild(bookImg);
-    sectionElement.appendChild(bookElement);
-    addBooksOnClick(bookElement);
-  });
-}
-
-let booksData = [];
-
-fetch("https://2017129007.github.io/HomeworkRepository/LAB4/products.json")
-  .then((res) => res.json())
-  .then((data) => putEachData(data))
-  .then((data) => booksData.join(data));
+  isFetching = false;
+  currentPage++;
+};
 
 const addBooksOnClick = (book) => {
   book.onclick = () => {
@@ -70,3 +47,27 @@ const makeBookImage = (book) => {
   bookImg.src = book?.img;
   return bookImg;
 };
+
+function putEachData(data) {
+  const sectionElement = document.querySelector("#book-section");
+  data.forEach((book) => {
+    const bookElement = document.createElement("div");
+    bookElement.classList.add("books");
+    const bookDetail = makeDetailElement(book);
+    const bookImg = makeBookImage(book);
+    bookElement.appendChild(bookDetail);
+    bookElement.appendChild(bookImg);
+    sectionElement.appendChild(bookElement);
+    addBooksOnClick(bookElement);
+  });
+}
+
+// Load initial items
+loadItems();
+
+// Scroll event listener
+window.addEventListener("scroll", () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    loadItems();
+  }
+});
