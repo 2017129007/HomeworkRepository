@@ -24,14 +24,17 @@ function putEachData(data) {
   const sectionElement = document.querySelector("#book-section");
   console.log("pED : ", data);
   data.forEach((book) => {
-    console.log("forEach : ", book);
     const bookElement = document.createElement("div");
-    bookElement.innerHTML = book?.title + book?.author + book?.description;
+    bookElement.classList.add("books");
+    const bookNameWrapper = document.createElement("div");
+    bookNameWrapper.classList.add("book-name-wrapper");
+    bookNameWrapper.innerHTML = `${book?.title} ${book?.author} ${book?.description}`;
+    bookElement.appendChild(bookNameWrapper);
     const bookImg = document.createElement("img");
+    bookImg.classList.add("book-image");
     bookElement.appendChild(bookImg);
     bookElement.lastChild.src = book?.img;
     sectionElement.appendChild(bookElement);
-    console.log("forEach bookElement : ", bookElement);
   });
 }
 
@@ -41,10 +44,6 @@ fetch("./products.json")
   .then((res) => res.json())
   .then((data) => putEachData(data))
   .then((data) => booksData.join(data));
-
-console.log(booksData);
-
-// createBooksDiv();
 
 booksData.forEach((book) => {
   bookName.innerHTML = book.title;
