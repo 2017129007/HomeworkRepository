@@ -26,49 +26,47 @@ function putEachData(data) {
   data.forEach((book) => {
     const bookElement = document.createElement("div");
     bookElement.classList.add("books");
-    const bookDetail = document.createElement("div");
-    bookDetail.classList.add("book-detail-hidden");
-    bookDetail.innerHTML = `${book?.title} ${book?.author} ${book?.description}`;
+    const bookDetail = makeDetailElement(book);
+    const bookImg = makeBookImage(book);
     bookElement.appendChild(bookDetail);
-    const bookImg = document.createElement("img");
-    bookImg.classList.add("book-image");
     bookElement.appendChild(bookImg);
-    bookElement.lastChild.src = book?.img;
     sectionElement.appendChild(bookElement);
-    addBooksOnClick(book);
+    addBooksOnClick(bookElement);
   });
 }
 
 let booksData = [];
 
-fetch("./products.json")
+fetch("https://2017129007.github.io/HomeworkRepository/LAB4/products.json")
   .then((res) => res.json())
   .then((data) => putEachData(data))
   .then((data) => booksData.join(data));
 
 const addBooksOnClick = (book) => {
-  console.log("First : ", book.firstChild);
-  console.log("Last : ", book.lastChild);
-  bookName.innerHTML = book.title;
-  book.lastChild.addEventListener(onclick, () => {
-    book.firstChild.classList.add("book-detail-show");
-    console.log(book.lastChild, "addEventListener?");
-  });
+  book.onclick = () => {
+    book.firstChild.classList.remove("book-detail-hidden");
+    book.firstChild.classList.add("book-detail-show", "d-flex-column");
+  };
 };
 
-// <div class="books-row d-flex-row">
-{
-  /* <div class="books">
-<img class="book-image" src="./img/effectiveTypescript.jpg" />
-<div class="book-name-wrapper">
-  <!-- <span class="book-name">어떤책1</span> -->
-</div>
-</div>
-<div class="books">
-<img class="book-image" src="./img/effectiveTypescript.jpg" />
-<div class="book-name-wrapper">
-  <!-- <span class="book-name">어떤책2</span> -->
-</div>
-</div>
-</div> */
-}
+const makeDetailElement = (book) => {
+  const bookDetail = document.createElement("div");
+  bookDetail.classList.add("book-detail-hidden");
+  const title = document.createElement("div");
+  title.innerHTML = `Title : ${book?.title}`;
+  const author = document.createElement("div");
+  author.innerHTML = `Author : ${book?.author}`;
+  const category = document.createElement("div");
+  category.innerHTML = `Category : ${book?.category}`;
+  const description = document.createElement("div");
+  description.innerHTML = `Description : ${book?.description}`;
+  bookDetail.append(title, author, category, description);
+  return bookDetail;
+};
+
+const makeBookImage = (book) => {
+  const bookImg = document.createElement("img");
+  bookImg.classList.add("book-image");
+  bookImg.src = book?.img;
+  return bookImg;
+};
