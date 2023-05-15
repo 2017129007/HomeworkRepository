@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
-    <script src="./index.js"></script>
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="pragma" content="no-cache" />
@@ -15,7 +14,7 @@
     <div class="body-wrapper">
       <header class="header">
         <h1 class="header-title animation-slide-in">
-          안녕하세요 마켓컬리입니다
+          안녕하세요 컬리서점입니다
         </h1>
       </header>
       <nav class="navigation d-flex-row">
@@ -30,23 +29,31 @@
       <!-- 사이드바 위한 flexbox -->
       <div class="d-flex-row">
         <!-- 사이드바에 필터링 -->
-        <aside class="sidebar sort d-flex-column width-300">
+        <aside class="sidebar d-flex-column width-300">
           <label for="sort-category">Choose a category: </label>
-          <select id="sort-category">
+          <select id="sort-category" class="sort" name="category">
             <option class="input-options">All</option>
             <option class="input-options">HTML</option>
             <option class="input-options">CSS</option>
             <option class="input-options">JS</option>
           </select>
           <label for="sort-search">Enter search form: </label>
-          <input id="sort-search" type="text" placeholder="e.g. HTML" />
+          <input
+            id="sort-search"
+            name="queryString"
+            type="text"
+            class="sort"
+            placeholder="e.g. HTML"
+          />
           <label for="sort-sort">Choose a sort: </label>
-          <select id="sort-sort">
+          <select id="sort-sort" name="sort" class="sort">
             <option class="input-options">none</option>
             <option class="input-options">up</option>
             <option class="input-options">down</option>
           </select>
-          <button>Filter results</button>
+          <button id="filter-button" class="filter-button">
+            Filter Results
+          </button>
         </aside>
         <!-- 사이드바끝 -->
 
@@ -54,14 +61,23 @@
           <section id="book-section" class="d-flex-wrap"></section>
           <!-- books-category 끝-->
           <div class="main-footer">
-            <h3 class="main-footer-title">마켓컬리 소개</h3>
+            <h3 class="main-footer-title">컬리서점 소개</h3>
             <div class="main-footer-content">
               <p class="main-footer-paragraph">
-                여기는마켓컬리 여기는마켓컬리 여기는마켓컬리 여기는마켓컬리
-                여기는마켓컬리 여기는마켓컬리 여기는마켓컬리 여기는마켓컬리
-                여기는마켓컬리 여기는마켓컬리 여기는마켓컬리 여기는마켓컬리
-                여기는마켓컬리 여기는마켓컬리 여기는마켓컬리 여기는마켓컬리
-                여기는마켓컬리 여기는마켓컬리 여기는마켓컬리 여기는마켓컬리
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
               </p>
             </div>
           </div>
@@ -70,4 +86,5 @@
       <hr />
     </div>
   </body>
+  <script src="./index.js"></script>
 </html>

@@ -1,19 +1,28 @@
 let currentPage = 1;
 const itemsPerPage = 6;
 let isFetching = false;
+let dataList = [];
 
-const loadItems = () => {
+const loadItems = async () => {
   if (isFetching) return;
 
   isFetching = true;
   console.log("fetching? ", isFetching);
-  fetch("https://2017129007.github.io/HomeworkRepository/LAB4/products.json")
+  await fetch(
+    "https://2017129007.github.io/HomeworkRepository/LAB4/products.json"
+  )
     .then((res) => res.json())
     .then((data) =>
       data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
     )
-    .then((data) => putEachData(data))
+    .then((data) => executeFilter(data))
+    .then((data) => {
+      dataList = data;
+      console.log("dl", dataList);
+    })
     .catch((error) => console.log(error));
+
+  putEachData(dataList);
 
   isFetching = false;
   currentPage++;
@@ -49,6 +58,7 @@ const makeBookImage = (book) => {
 };
 
 function putEachData(data) {
+  console.log("pe", data);
   const sectionElement = document.querySelector("#book-section");
   data.forEach((book) => {
     const bookElement = document.createElement("div");
@@ -64,10 +74,58 @@ function putEachData(data) {
 
 // Load initial items
 loadItems();
+// putEachData(dataList);
 
 // Scroll event listener
 window.addEventListener("scroll", () => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     loadItems();
+    // putEachData(dataList);
   }
 });
+
+// filter
+const filterValues = { category: "All", queryString: "", sort: "" };
+
+const handleFilterChange = (e) => {
+  filterValues[e.target.name] = e.target.value;
+  console.log("fv : ", filterValues);
+};
+
+const onFilterClick = (e) => {
+  console.log("filterValues : ", filterValues);
+  dataList = dataList.filter((data) => {
+    data.category = filterValues.category;
+    // filterValues?.sort === "up" ?
+  });
+  document.querySelector("#book-section").innerHTML = "";
+  putEachData(dataList);
+};
+
+const executeFilter = (data) => {
+  console.log("data", data);
+  let filteredData = data;
+  if (filterValues.category !== "All") {
+    filteredData = data.filter((book) => {
+      book.category === filterValues.category;
+    });
+  }
+  console.log("fvC", filterValues.category);
+  console.log("filteredData", filteredData);
+  const sortedData =
+    filterValues?.sort === "up"
+      ? filteredData.sort((a, b) => {
+          a?.price > b?.price;
+        })
+      : filteredData.sort((a, b) => {
+          a?.price < b?.price;
+        });
+  return sortedData;
+};
+
+const filterButton = document.getElementById("filter-button");
+filterButton.onclick = loadItems;
+
+const selectElements = document.querySelectorAll(".sort");
+selectElements.forEach((element) => (element.onchange = handleFilterChange));
+console.log(selectElements);

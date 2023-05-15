@@ -111,6 +111,7 @@ button {
   margin: 10px;
   padding: 2px;
   font-weight: 900;
+  cursor: pointer;
   /* color: ; */
 }
 
