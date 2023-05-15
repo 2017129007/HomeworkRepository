@@ -47,8 +47,11 @@ fetch("./products.json")
 
 booksData.forEach((book) => {
   bookName.innerHTML = book.title;
+  console.log("First : ", book.firstChild);
+  console.log("Last : ", book.lastChild);
   book.lastChild.addEventListener(onclick, () => {
     book.firstChild.classList.add("book-detail-show");
+    console.log(book.lastChild, "addEventListener?");
   });
 });
 
