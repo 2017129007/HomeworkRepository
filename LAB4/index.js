@@ -35,6 +35,7 @@ function putEachData(data) {
     bookElement.appendChild(bookImg);
     bookElement.lastChild.src = book?.img;
     sectionElement.appendChild(bookElement);
+    addBooksOnClick(book);
   });
 }
 
@@ -45,15 +46,15 @@ fetch("./products.json")
   .then((data) => putEachData(data))
   .then((data) => booksData.join(data));
 
-booksData.forEach((book) => {
-  bookName.innerHTML = book.title;
+const addBooksOnClick = (book) => {
   console.log("First : ", book.firstChild);
   console.log("Last : ", book.lastChild);
+  bookName.innerHTML = book.title;
   book.lastChild.addEventListener(onclick, () => {
     book.firstChild.classList.add("book-detail-show");
     console.log(book.lastChild, "addEventListener?");
   });
-});
+};
 
 // <div class="books-row d-flex-row">
 {
