@@ -27,9 +27,11 @@ function putEachData(data) {
     console.log("forEach : ", book);
     const bookElement = document.createElement("div");
     bookElement.innerHTML = book?.title + book?.author + book?.description;
-    bookElement.appendChild("img");
+    const bookImg = document.createElement("img");
+    bookElement.appendChild(bookImg);
     bookElement.lastChild.src = book?.img;
-    sectionElement.appendChild();
+    sectionElement.appendChild(bookElement);
+    console.log("forEach bookElement : ", bookElement);
   });
 }
 
