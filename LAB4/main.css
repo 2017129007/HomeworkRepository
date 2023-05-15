@@ -141,6 +141,7 @@ button a {
 
 .book-image {
   width: 200px;
+  height: 260px;
   display: block;
   border: 1px solid black;
   position: relative;
@@ -149,6 +150,7 @@ button a {
 
 .book-image:hover {
   width: 210px;
+  height: 263px;
   z-index: 0;
   transition: 0.05s width linear;
 }
@@ -162,6 +164,27 @@ button a {
 .books {
   margin: 10px 5px;
   width: 45%;
+}
+
+.book-detail-hidden {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 260px;
+  z-index: 100;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.book-detail-show {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 260px;
+  z-index: 100;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 /* flex box */

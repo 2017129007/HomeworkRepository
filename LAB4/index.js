@@ -26,10 +26,10 @@ function putEachData(data) {
   data.forEach((book) => {
     const bookElement = document.createElement("div");
     bookElement.classList.add("books");
-    const bookNameWrapper = document.createElement("div");
-    bookNameWrapper.classList.add("book-name-wrapper");
-    bookNameWrapper.innerHTML = `${book?.title} ${book?.author} ${book?.description}`;
-    bookElement.appendChild(bookNameWrapper);
+    const bookDetail = document.createElement("div");
+    bookDetail.classList.add("book-detail-hidden");
+    bookDetail.innerHTML = `${book?.title} ${book?.author} ${book?.description}`;
+    bookElement.appendChild(bookDetail);
     const bookImg = document.createElement("img");
     bookImg.classList.add("book-image");
     bookElement.appendChild(bookImg);
@@ -47,6 +47,9 @@ fetch("./products.json")
 
 booksData.forEach((book) => {
   bookName.innerHTML = book.title;
+  book.lastChild.addEventListener(onclick, () => {
+    book.firstChild.classList.add("book-detail-show");
+  });
 });
 
 // <div class="books-row d-flex-row">
