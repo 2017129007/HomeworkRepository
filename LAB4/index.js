@@ -117,8 +117,8 @@ const executeFilter = (data) => {
   let filteredData = data;
   if (filterValues.category !== "All") {
     filteredData = data.filter((book) => {
-      if (book.category === filterValues.category) {
-        return true;
+      if (filterValues?.category && book.category !== filterValues.category) {
+        return false;
       } else return false;
     });
   }
@@ -134,7 +134,16 @@ const executeFilter = (data) => {
     );
   }
   console.log("sorted", sortedData);
-  return sortedData;
+  const finalData = sortedData.filter((book) => {
+    console.log(JSON.stringify(book).includes(filterValues?.queryString));
+    if (
+      !filterValues?.queryString ||
+      JSON.stringify(book).includes(filterValues?.queryString)
+    ) {
+      return true;
+    } else return false;
+  });
+  return finalData;
 };
 
 const filterButton = document.getElementById("filter-button");
@@ -146,10 +155,6 @@ filterButton.onclick = () => {
   putEachData(filteredList);
 };
 
-const selectElements = document.querySelectorAll(".sort");
-selectElements.forEach((element) => (element.onchange = handleFilterChange));
-console.log(selectElements);
-
 function clearSection() {
   const section = document.querySelector("#book-section");
   while (section.firstChild) {
@@ -157,3 +162,9 @@ function clearSection() {
     section?.firstChild?.remove();
   }
 }
+
+const selectElements = document.querySelectorAll(".sort");
+selectElements.forEach((element) => {
+  element.onchange = handleFilterChange;
+});
+console.log(selectElements);
