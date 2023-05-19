@@ -118,7 +118,7 @@ const executeFilter = (data) => {
   if (filterValues.category !== "All") {
     filteredData = data.filter((book) => {
       if (filterValues?.category && book.category !== filterValues.category) {
-        return false;
+        return true;
       } else return false;
     });
   }
