@@ -1,0 +1,178 @@
+[
+  {
+    "title": "어떤책1",
+    "author": "김저자",
+    "img": "./img/html1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$12",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책2",
+    "author": "이저자",
+    "img": "./img/css3.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$11",
+    "category": "CSS"
+  },
+  {
+    "title": "어떤책3",
+    "author": "박저자",
+    "img": "./img/html1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$10",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책4",
+    "author": "김저자",
+    "img": "./img/html1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$12",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책5",
+    "author": "김저자",
+    "img": "./img/js1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$13",
+    "category": "JS"
+  },
+  {
+    "title": "어떤책6",
+    "author": "김저자",
+    "img": "./img/html1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$2",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책7",
+    "author": "김저자",
+    "img": "./img/css2.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$1",
+    "category": "CSS"
+  },
+  {
+    "title": "어떤책8",
+    "author": "김저자",
+    "img": "./img/html2.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$14",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책9",
+    "author": "김저자",
+    "img": "./img/html2.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$12",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책10",
+    "author": "김저자",
+    "img": "./img/html2.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$8",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책11",
+    "author": "김저자",
+    "img": "./img/html1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$8",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책12",
+    "author": "김저자",
+    "img": "./img/html1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$8",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책13",
+    "author": "김저자",
+    "img": "./img/css1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$8",
+    "category": "CSS"
+  },
+  {
+    "title": "어떤책14",
+    "author": "김저자",
+    "img": "./img/html1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$8",
+    "category": "HTML"
+  },
+  {
+    "title": "어떤책15",
+    "author": "김저자",
+    "img": "./img/effectiveTypescript.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$89",
+    "category": "JS"
+  },
+  {
+    "title": "어떤책16",
+    "author": "김저자",
+    "img": "./img/css1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$8",
+    "category": "CSS"
+  },
+  {
+    "title": "어떤책17",
+    "author": "김저자",
+    "img": "./img/css2.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$80",
+    "category": "CSS"
+  },
+  {
+    "title": "어떤책18",
+    "author": "김저자",
+    "img": "./img/effectiveTypescript.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$19",
+    "category": "JS"
+  },
+  {
+    "title": "어떤책19",
+    "author": "김저자",
+    "img": "./img/css1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$19",
+    "category": "CSS"
+  },
+  {
+    "title": "어떤책20",
+    "author": "김저자",
+    "img": "./img/css3.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$19",
+    "category": "CSS"
+  },
+  {
+    "title": "어떤책21",
+    "author": "김저자",
+    "img": "./img/effectiveTypescript.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$9",
+    "category": "JS"
+  },
+  {
+    "title": "어떤책22",
+    "author": "김저자",
+    "img": "./img/js1.jpg",
+    "description": "이런 저런 책입니다.",
+    "price": "$12",
+    "category": "JS"
+  }
+]

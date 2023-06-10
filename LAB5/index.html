@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>과제4</title>
+  </head>
+  <body>
+    <div class="body-wrapper">
+      <header class="header">
+        <h1 class="header-title animation-slide-in">
+          안녕하세요 컬리서점입니다
+        </h1>
+      </header>
+      <nav class="navigation d-flex-row">
+        <a class="selected" href="index.html">메인페이지</a>
+        <a href="./signup.html">회원가입</a>
+        <a href="./login.html">로그인</a>
+      </nav>
+
+      <hr />
+      <h2>Products</h2>
+
+      <!-- 사이드바 위한 flexbox -->
+      <div class="d-flex-row">
+        <!-- 사이드바에 필터링 -->
+        <aside class="sidebar d-flex-column width-300">
+          <label for="sort-category">Choose a category: </label>
+          <select id="sort-category" class="sort" name="category">
+            <option class="input-options">All</option>
+            <option class="input-options">HTML</option>
+            <option class="input-options">CSS</option>
+            <option class="input-options">JS</option>
+          </select>
+          <label for="sort-search">Enter search form: </label>
+          <input
+            id="sort-search"
+            name="queryString"
+            type="text"
+            class="sort"
+            placeholder="e.g. HTML"
+          />
+          <label for="sort-sort">Choose a sort: </label>
+          <select id="sort-sort" name="sort" class="sort">
+            <option class="input-options">none</option>
+            <option class="input-options">up</option>
+            <option class="input-options">down</option>
+          </select>
+          <button id="filter-button" class="filter-button">
+            Filter Results
+          </button>
+        </aside>
+        <!-- 사이드바끝 -->
+
+        <main class="main d-flex-column">
+          <section id="book-section" class="d-flex-wrap"></section>
+          <!-- books-category 끝-->
+          <div class="main-footer">
+            <h3 class="main-footer-title">컬리서점 소개</h3>
+            <div class="main-footer-content">
+              <p class="main-footer-paragraph">
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+                여기는컬리서점 여기는컬리서점 여기는컬리서점 여기는컬리서점
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+      <hr />
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

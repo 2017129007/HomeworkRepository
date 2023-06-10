@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>SignUp - IP shop</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div class="body-wrapper">
+      <header>
+        <h1>welcome to IP shop</h1>
+      </header>
+      <nav class="navigation">
+        <a href="index.html">메인페이지</a>
+        <a class="selected" href="./signup.html">회원가입</a>
+        <a href="./login.html">로그인</a>
+      </nav>
+      <hr />
+      <article>
+        <h3>개인 정보 (필수)</h3>
+        <div>
+          <form>
+            <div>
+              <label>이름 : </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="이름을 입력하세요."
+                required
+                autofocus
+              />
+            </div>
+            <div>
+              <label>생일 : </label>
+              <input name="birthday" type="date" placeholder="연도 - 월 - 일" />
+            </div>
+            <div>
+              <label>성별 : </label>
+              <label for="male">남성 </label>
+              <input name="sex" id="male" type="radio" value="남성" />
+              <label for="female">여성 </label>
+              <input name="sex" id="female" type="radio" value="여성" />
+            </div>
+            <div>
+              <label>학년 : </label>
+              <input required name="grade" id="grade" type="number" step="1" />
+            </div>
+            <div>
+              <label>전화번호 : </label>
+              <input name="phone" type="tel" placeholder="(###)###-####" />
+            </div>
+            <div>
+              <label>유저 아이디 : </label>
+              <input
+                required
+                name="userId"
+                id="userId"
+                type="text"
+                autocomplete="userId"
+                placeholder="아이디를 입력하세요."
+              />
+            </div>
+            <div>
+              <label>비밀번호 : </label>
+              <input
+                required
+                name="password"
+                id="password"
+                type="password"
+                placeholder="비밀번호 입력하세요"
+              />
+            </div>
+            <div>
+              <label>비밀번호 확인 : </label>
+              <input
+                required
+                name="passwordCheck"
+                id="passwordCheck"
+                type="password"
+                placeholder="비밀번호 확인"
+              />
+            </div>
+            <div>
+              <label>관심 항목 : </label>
+              <label for="interest-a">관심사A</label>
+              <input
+                name="interest"
+                id="interest-a"
+                value="관심사-a"
+                type="checkbox"
+              />
+              <label for="interest-b">관심사B</label>
+
+              <input
+                name="interest"
+                id="interest-b"
+                value="관심사-b"
+                type="checkbox"
+              />
+              <label for="interest-c">관심사C</label>
+
+              <input
+                name="interest"
+                id="interest-c"
+                value="관심사-c"
+                type="checkbox"
+              />
+            </div>
+            <div class="button-div">
+              <button class="button-ok" type="submit">가입</button>
+              <button class="button-blue" type="reset">취소</button>
+            </div>
+          </form>
+        </div>
+      </article>
+      <hr />
+    </div>
+  </body>
+</html>
