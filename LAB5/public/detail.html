@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="main.css" /> -->
+    <style>
+      .body-wrapper {
+        width: 1020px;
+      }
+      /* 반응형 */
+@media (min-width: 801px) {
+  .body-wrapper {
+    width: 900px;
+  }
+  .main-footer-paragraph {
+    column-count: 2;
+    column-rule: 1px solid black;
+  }
+}
+
+@media (max-width: 800px) {
+  .body-wrapper {
+    width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .body-wrapper {
+    width: 300px;
+  }
+}
+
+/* 헤더 애니메이션 */
+.header {
+  display: flex;
+  justify-content: left;
+}
+
+/* nav바 */
+.navigation {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  /* width: 100%; */
+}
+
+.navigation a {
+  margin: 0px 10px;
+}
+button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+}
+
+.selected {
+  border-top: 3px red solid;
+  border-bottom: 3px red solid;
+  padding: 3px 0 3px 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+    </style>
+    <title>과제5</title>
+  </head>
+  <body>
+    <div class="body-wrapper">
+        <header class="header">
+          <h1 class="header-title animation-slide-in">
+            안녕하세요 컬리서점입니다
+          </h1>
+        </header>
+        <nav class="navigation d-flex-row">
+          <a class="selected" href="http://localhost:3000/index.html">메인페이지</a>
+          <a href="http://localhost:3000/signup.html">회원가입</a>
+          <a href="http://localhost:3000/login.html">로그인</a>
+        </nav>
+  
+        <hr />
+        <h2>Products</h2>
+        <div class="d-flex-row">
+            <img width="200px" src="http://localhost:3000{{img}}" />
+        <div class="product" style="margin:10px">
+            <h1>product_title: {{title}}</h1>
+            <p>product_id: {{id}}</p>
+            <p>product_price: {{price}}</p>
+            <p>product_category: {{category}}</p>
+          </div>
+        <div id="comment-box" style="display: flex; flex-direction: column;">
+          <form>
+          <label>Submit your review</label>
+            <input type="text" placeholder="review" id="comment" name="comment" />
+          <button id="submit" onclick={handleSubmit}>submit</button>
+        </form>
+          <div id="feedback-box">
+            <h3>Feedbacks</h3>
+            {{comments}}
+          </div>
+        </div>
+        </div>
+        <script>
+
+          let commentData = {}
+
+          
+          const handleChange = (e)=> {
+            const path = window.location.pathname;
+            const pathParts = path.split('/');
+            const productId = pathParts[pathParts.length - 1];
+            
+            commentData.productId = productId;
+            commentData.comment = e.target.value
+          }
+          
+          const commentInput = document.querySelector("#comment")
+          commentInput.addEventListener("change", handleChange)
+          
+          const handleSubmit = (e) => {
+            console.log(commentData)
+            e.preventDefault()
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/comment", true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.send(JSON.stringify(commentData));
+          }
+
+          const submitButton = document.querySelector("#submit")
+          submitButton.addEventListener("click", handleSubmit)
+        </script>
+  </body>
+</html>

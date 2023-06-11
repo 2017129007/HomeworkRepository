@@ -15,22 +15,15 @@ const fetchData = async (query) => {
   });
 };
 
-const addBooksOnClick = (book) => {
-  book.onclick = () => {
-    book.firstChild.classList.remove("book-detail-hidden");
-    book.firstChild.classList.add("book-detail-show", "d-flex-column");
-  };
-};
-
 const makeDetailElement = (book) => {
   const bookDetail = document.createElement("div");
-  bookDetail.classList.add("book-detail-hidden");
+  // bookDetail.classList.add("book-detail-hidden");
   const title = document.createElement("div");
-  title.innerHTML = `Title : ${book?.title}`;
+  title.innerHTML = `Title : ${book?.product_title}`;
   const category = document.createElement("div");
-  category.innerHTML = `Category : ${book?.category}`;
+  category.innerHTML = `Category : ${book?.product_category}`;
   const price = document.createElement("div");
-  price.innerHTML = `Price : ${book?.price}`;
+  price.innerHTML = `Price : ${book?.product_price}`;
   bookDetail.append(title, category, price);
   return bookDetail;
 };
@@ -46,14 +39,14 @@ function putEachData(data) {
   console.log("pe", data);
   const sectionElement = document.querySelector("#book-section");
   data.forEach((book) => {
-    const bookElement = document.createElement("div");
+    const bookElement = document.createElement("a");
+    bookElement.href = `http://localhost:3000/product/${book.product_id}`;
     bookElement.classList.add("books");
     const bookDetail = makeDetailElement(book);
     const bookImg = makeBookImage(book);
     bookElement.appendChild(bookDetail);
     bookElement.appendChild(bookImg);
     sectionElement.appendChild(bookElement);
-    addBooksOnClick(bookElement);
   });
 }
 
